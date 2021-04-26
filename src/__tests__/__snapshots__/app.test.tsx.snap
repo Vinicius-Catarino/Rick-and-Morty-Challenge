@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index page should have Root component 1`] = `
+<Fragment>
+  <BrowserRouter>
+    <Routes />
+    <Memo(l) />
+  </BrowserRouter>
+</Fragment>
+`;
+
+exports[`index page should not be able search without text 1`] = `
+<Fragment>
+  <styled.div
+    isLoading={false}
+  >
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <img
+        alt="Rick and Morty"
+        src={null}
+      />
+      <div>
+        <input
+          id="inputTextToSearch"
+          onChange={[Function]}
+          placeholder="Search character"
+          value=""
+        />
+        <button
+          id="buttonSearch"
+          type="submit"
+        >
+          Search
+        </button>
+      </div>
+    </styled.form>
+    <styled.div />
+    <styled.div>
+      <WithStyles(ForwardRef(Pagination))
+        color="primary"
+        count={0}
+        onChange={[Function]}
+      />
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;
