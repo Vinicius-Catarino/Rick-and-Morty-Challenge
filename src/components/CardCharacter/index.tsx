@@ -14,7 +14,7 @@ const CardCharacter: React.FC<ICardCharacterProps> = ({
 }) => {
   return (
     <>
-      <Card onClick={onClick}>
+      <Card id="cardCharacter" onClick={onClick}>
         <img src={character.image} alt="character" />
         <div>
           <Name>{_.truncate(character.name, { length: 15 })}</Name>

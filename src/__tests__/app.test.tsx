@@ -4,9 +4,6 @@ import Root from "../App";
 import Home from "../pages/Home";
 import "jsdom-global/register";
 import axios from "axios";
-// import getCharactersByFilter from "../services/graphql/getCharactersByFilter";
-
-// jest.mock("../services/graphql/getCharactersByFilter");
 
 const charactersReturn = {
   results: [
@@ -47,8 +44,6 @@ describe("index page", () => {
 
     const button = wrapper.find("#buttonSearch");
 
-    // Auth.signIn = jest.fn().mockImplementation(() => mockUser);
-
     button.simulate("click");
 
     expect(wrapper).toMatchSnapshot();
@@ -67,6 +62,25 @@ describe("index page", () => {
     axios.post = jest.fn().mockImplementation(() => charactersReturn);
 
     await button.simulate("click");
+
+    setTimeout(() => {
+      expect(wrapper).toMatchSnapshot();
+      done();
+    }, 2000);
+  });
+
+  it("should be able search with not results", async (done) => {
+    const wrapper = shallow(<Home />);
+
+    const inputTextToSearch = wrapper.find("#inputTextToSearch");
+
+    inputTextToSearch.simulate("change", { target: { value: "asd" } });
+
+    const button = wrapper.find("#buttonSearch");
+
+    await button.simulate("click");
+
+    axios.post = jest.fn().mockImplementation(() => null);
 
     setTimeout(() => {
       expect(wrapper).toMatchSnapshot();
