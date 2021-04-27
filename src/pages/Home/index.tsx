@@ -42,7 +42,7 @@ const Home: React.FC = () => {
       setPaginationNumber(page);
       setIsLoading(false);
     } catch (error) {
-      setErrorText("An error occurred while fetching the characters");
+      console.log(error);
       setIsLoading(false);
     }
   }, []);
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
       setCharacters(response.results);
       setIsLoading(false);
     } catch (error) {
-      setErrorText("An error occurred while fetching the characters");
+      console.log(error);
       setIsLoading(false);
     }
   }, [characterToSearch, paginationNumber]);
