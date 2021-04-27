@@ -28,4 +28,13 @@ button {
   color:  #fff !important;
 }
 
+.sc-eCImvq {
+border-radius: 15px !important;
+}
+.MuiCardActionArea-root{
+  background: #1f1f1f !important;
+  border: 2px solid #606060 !important;
+  border-radius: 1px !important;
+  padding: 0px !important;
+}
 `;

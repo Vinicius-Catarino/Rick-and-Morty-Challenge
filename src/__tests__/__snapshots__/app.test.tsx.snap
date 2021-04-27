@@ -1,5 +1,361 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`index page should be able search 1`] = `
+<Fragment>
+  <styled.div
+    isLoading={false}
+  >
+    <styled.form>
+      <img
+        alt="Rick and Morty"
+        src={null}
+      />
+      <div>
+        <input
+          id="inputTextToSearch"
+          onChange={[Function]}
+          placeholder="Search character"
+          value="rick"
+        />
+        <button
+          id="buttonSearch"
+          onClick={[Function]}
+        >
+          Search
+        </button>
+      </div>
+    </styled.form>
+    <styled.div>
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        key="1"
+        name="Rick Sanchez"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/8.jpeg"
+        key="8"
+        name="Adjudicator Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
+        key="15"
+        name="Alien Rick"
+        onClick={[Function]}
+        type="Alien"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+        key="19"
+        name="Antenna Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/22.jpeg"
+        key="22"
+        name="Aqua Rick"
+        onClick={[Function]}
+        type="Humanoid"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/48.jpeg"
+        key="48"
+        name="Black Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/56.jpeg"
+        key="56"
+        name="Bootleg Portal Chemist Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/69.jpeg"
+        key="69"
+        name="Commander Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/72.jpeg"
+        key="72"
+        name="Cool Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/74.jpeg"
+        key="74"
+        name="Cop Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/78.jpeg"
+        key="78"
+        name="Cowboy Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/82.jpeg"
+        key="82"
+        name="Cronenberg Rick"
+        onClick={[Function]}
+        type="Cronenberg"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/86.jpeg"
+        key="86"
+        name="Cyclops Rick"
+        onClick={[Function]}
+        type="Humanoid"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/103.jpeg"
+        key="103"
+        name="Doofus Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/119.jpeg"
+        key="119"
+        name="Evil Rick"
+        onClick={[Function]}
+        type="Humanoid"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/135.jpeg"
+        key="135"
+        name="Garment District Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/164.jpeg"
+        key="164"
+        name="Insurance Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/165.jpeg"
+        key="165"
+        name="Investigator Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/187.jpeg"
+        key="187"
+        name="Juggling Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/215.jpeg"
+        key="215"
+        name="Maximums Rickimus"
+        onClick={[Function]}
+        type="Human"
+      />
+    </styled.div>
+    <styled.div>
+      <WithStyles(ForwardRef(Pagination))
+        color="primary"
+        count={0}
+        onChange={[Function]}
+      />
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;
+
+exports[`index page should be able search with error 1`] = `
+<Fragment>
+  <styled.div
+    isLoading={false}
+  >
+    <styled.form>
+      <img
+        alt="Rick and Morty"
+        src={null}
+      />
+      <div>
+        <input
+          id="inputTextToSearch"
+          onChange={[Function]}
+          placeholder="Search character"
+          value="rick"
+        />
+        <button
+          id="buttonSearch"
+          onClick={[Function]}
+        >
+          Search
+        </button>
+      </div>
+    </styled.form>
+    <styled.div>
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        key="1"
+        name="Rick Sanchez"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/8.jpeg"
+        key="8"
+        name="Adjudicator Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/15.jpeg"
+        key="15"
+        name="Alien Rick"
+        onClick={[Function]}
+        type="Alien"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/19.jpeg"
+        key="19"
+        name="Antenna Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/22.jpeg"
+        key="22"
+        name="Aqua Rick"
+        onClick={[Function]}
+        type="Humanoid"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/48.jpeg"
+        key="48"
+        name="Black Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/56.jpeg"
+        key="56"
+        name="Bootleg Portal Chemist Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/69.jpeg"
+        key="69"
+        name="Commander Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/72.jpeg"
+        key="72"
+        name="Cool Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/74.jpeg"
+        key="74"
+        name="Cop Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/78.jpeg"
+        key="78"
+        name="Cowboy Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/82.jpeg"
+        key="82"
+        name="Cronenberg Rick"
+        onClick={[Function]}
+        type="Cronenberg"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/86.jpeg"
+        key="86"
+        name="Cyclops Rick"
+        onClick={[Function]}
+        type="Humanoid"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/103.jpeg"
+        key="103"
+        name="Doofus Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/119.jpeg"
+        key="119"
+        name="Evil Rick"
+        onClick={[Function]}
+        type="Humanoid"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/135.jpeg"
+        key="135"
+        name="Garment District Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/164.jpeg"
+        key="164"
+        name="Insurance Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/165.jpeg"
+        key="165"
+        name="Investigator Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/187.jpeg"
+        key="187"
+        name="Juggling Rick"
+        onClick={[Function]}
+        type="Human"
+      />
+      <CardCharacter
+        img="https://rickandmortyapi.com/api/character/avatar/215.jpeg"
+        key="215"
+        name="Maximums Rickimus"
+        onClick={[Function]}
+        type="Human"
+      />
+    </styled.div>
+    <styled.div>
+      <WithStyles(ForwardRef(Pagination))
+        color="primary"
+        count={0}
+        onChange={[Function]}
+      />
+    </styled.div>
+  </styled.div>
+</Fragment>
+`;
+
 exports[`index page should have Root component 1`] = `
 <Fragment>
   <BrowserRouter>
@@ -14,9 +370,7 @@ exports[`index page should not be able search without text 1`] = `
   <styled.div
     isLoading={false}
   >
-    <styled.form
-      onSubmit={[Function]}
-    >
+    <styled.form>
       <img
         alt="Rick and Morty"
         src={null}
@@ -30,7 +384,7 @@ exports[`index page should not be able search without text 1`] = `
         />
         <button
           id="buttonSearch"
-          type="submit"
+          onClick={[Function]}
         >
           Search
         </button>

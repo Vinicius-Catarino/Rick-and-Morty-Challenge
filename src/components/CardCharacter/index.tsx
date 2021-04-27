@@ -1,27 +1,24 @@
 import React from "react";
 import _ from "lodash";
 import { Card, Name, Type } from "./styles";
+import Character from "../../models/Character";
 
 interface ICardCharacterProps {
-  name: string;
-  type: string;
-  img: string;
+  character: Character;
   onClick(): void;
 }
 
 const CardCharacter: React.FC<ICardCharacterProps> = ({
-  name,
-  type,
-  img,
+  character,
   onClick,
 }) => {
   return (
     <>
       <Card onClick={onClick}>
-        <img src={img} alt="character" />
+        <img src={character.image} alt="character" />
         <div>
-          <Name>{_.truncate(name, { length: 15 })}</Name>
-          <Type>{_.truncate(type, { length: 25 })}</Type>
+          <Name>{_.truncate(character.name, { length: 15 })}</Name>
+          <Type>{_.truncate(character.species, { length: 25 })}</Type>
         </div>
       </Card>
     </>

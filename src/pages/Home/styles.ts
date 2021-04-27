@@ -33,7 +33,7 @@ export const Container = styled.div<IContainerProps>`
     `}
 `;
 
-export const Form = styled.form`
+export const ContainerSearch = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,4 +76,9 @@ export const ContainerPagination = styled.div`
   display: flex;
   justify-content: center;
   margin: 20px auto;
+`;
+
+export const Text = styled.text`
+  font-size: 30px;
+  margin-top: 20px;
 `;

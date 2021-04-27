@@ -4,7 +4,6 @@ import Loading from "../../components/Loading";
 import CardCharacter from "../../components/CardCharacter";
 import ModalCharacterDetails from "../../components/ModalCharacterDetails";
 
-import api from "../../services/api";
 import Pagination from "@material-ui/lab/Pagination";
 
 import Rickandmorty from "../../assets/Rickandmorty.png";
@@ -13,16 +12,24 @@ import getAllCharacters from "../../services/graphql/getAllCharacters";
 
 import Character from "../../models/Character";
 
-import { Container, Form, ContainerCard, ContainerPagination } from "./styles";
+import {
+  Container,
+  ContainerSearch,
+  ContainerCard,
+  ContainerPagination,
+  Text,
+} from "./styles";
 import getCharactersByFilter from "../../services/graphql/getCharactersByFilter";
 
 const Home: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [characterToSearch, setCharacterToSearch] = useState("");
   const [characters, setCharacters] = useState<Character[]>([]);
-  const [selectedCharacter, setSelectedCharacter] = useState(false);
+  const [selectedCharacter, setSelectedCharacter] = useState<Character>();
+  const [openModalSelected, setOpenModalSelected] = useState(false);
   const [paginationNumber, setPaginationNumber] = useState(1);
   const [countCharacters, setCountCharacters] = useState(0);
+  const [errorText, setErrorText] = useState("");
 
   const loadAllCharacters = useCallback(async (page) => {
     try {
@@ -35,8 +42,8 @@ const Home: React.FC = () => {
       setPaginationNumber(page);
       setIsLoading(false);
     } catch (error) {
+      setErrorText("An error occurred while fetching the characters");
       setIsLoading(false);
-      console.log(error);
     }
   }, []);
 
@@ -44,65 +51,66 @@ const Home: React.FC = () => {
     loadAllCharacters(paginationNumber);
   }, [paginationNumber, loadAllCharacters]);
 
-  const handleCharacterSearch = useCallback(
-    async (event) => {
-      event.preventDefault();
+  const handleCharacterSearch = useCallback(async () => {
+    if (!characterToSearch) {
+      return setErrorText("Please enter a valid name");
+    }
 
-      if (!characterToSearch) {
-        console.log("RETORNAR UM ERRO");
-      }
+    try {
+      setIsLoading(true);
+      setPaginationNumber(1);
 
-      try {
-        setIsLoading(true);
-        setPaginationNumber(1);
-        const response = await getCharactersByFilter(
-          paginationNumber,
-          characterToSearch
-        );
+      const response = await getCharactersByFilter(
+        paginationNumber,
+        characterToSearch
+      );
 
-        setCharacters(response.results);
-        setIsLoading(false);
-      } catch (error) {
-        console.log(error);
-        setIsLoading(false);
-      }
-    },
-    [characterToSearch, paginationNumber]
-  );
+      if (!response) setErrorText("No character with this name");
+      else setErrorText("");
 
-  const onSelectCharacter = useCallback(
-    (id) => {
-      setSelectedCharacter(!selectedCharacter);
-    },
-    [selectedCharacter]
-  );
+      setCharacters(response.results);
+      setIsLoading(false);
+    } catch (error) {
+      setErrorText("An error occurred while fetching the characters");
+      setIsLoading(false);
+    }
+  }, [characterToSearch, paginationNumber]);
+
+  const handleModal = useCallback(() => {
+    setOpenModalSelected(!openModalSelected);
+  }, [openModalSelected]);
 
   return (
     <>
       <Container isLoading={isLoading}>
-        <Form onSubmit={handleCharacterSearch}>
+        <ContainerSearch>
           <img src={Rickandmorty} alt="Rick and Morty" />
           <div>
             <input
+              onKeyPress={(e) => {
+                if (e.key === "Enter") handleCharacterSearch();
+              }}
               id="inputTextToSearch"
               value={characterToSearch}
               onChange={(e) => setCharacterToSearch(e.target.value)}
               placeholder="Search character"
             />
-            <button id="buttonSearch" type="submit">
+            <button onClick={() => handleCharacterSearch()} id="buttonSearch">
               Search
             </button>
           </div>
-        </Form>
+          <Text>{errorText}</Text>
+        </ContainerSearch>
 
         <ContainerCard>
           {characters.map((character) => (
             <CardCharacter
-              onClick={() => onSelectCharacter(character.id)}
+              onClick={() => {
+                setSelectedCharacter(character);
+                handleModal();
+              }}
               key={character.id}
-              name={character.name}
-              type={character.species}
-              img={character.image}
+              character={character}
             />
           ))}
         </ContainerCard>
@@ -117,8 +125,9 @@ const Home: React.FC = () => {
 
         {selectedCharacter && (
           <ModalCharacterDetails
-            open={selectedCharacter}
-            handleClose={() => onSelectCharacter(1)}
+            open={openModalSelected}
+            character={selectedCharacter}
+            handleClose={() => handleModal()}
           />
         )}
       </Container>

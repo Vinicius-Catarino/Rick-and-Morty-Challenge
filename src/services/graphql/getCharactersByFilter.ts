@@ -6,7 +6,7 @@ const getCharactersByFilter = async (
   page: number,
   characterToSearch: string
 ): Promise<ICharacter> => {
-  return api.post("", {
+  const { data: response } = await api.post("", {
     query: `query {
       characters(page: ${page}, filter: { name: \"${characterToSearch}\" }) {
         info {
@@ -18,22 +18,33 @@ const getCharactersByFilter = async (
           type,
           image,
           species,
+          gender,
+          status,
+          created,
           location{
             id,
             name,
             type,
-            dimension
+            dimension,
+            residents{
+              id
+            }
           },
           origin{
             id,
             name,
             type,
-            dimension
+            dimension,
+            residents{
+              id
+            }
           }
         }
       }
     }`,
   });
+
+  return response.data.characters;
 };
 
 export default getCharactersByFilter;

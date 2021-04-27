@@ -13,18 +13,28 @@ const getAllCharacters = async (page: number): Promise<ICharacter> => {
         type,
         image,
         species,
+        gender,
+        status,
+        created,
         location{
           id,
           name,
           type,
-          dimension
+          dimension,
+          residents{
+            id
+          }
         },
         origin{
           id,
           name,
           type,
-          dimension
+          dimension,
+          residents{
+            id
+          }
         }
+
       }}
     }`,
   });
